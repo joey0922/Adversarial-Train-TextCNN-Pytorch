@@ -6,7 +6,7 @@ import os
 import joblib
 import torch
 import numpy as np
-from advers import normal_train, fgsm_train, pgd_train, free_train
+from adversary import normal_train, fgsm_train, pgd_train, free_train
 from config import TrainConfig
 from utils import build_data_loader, build_model
 
