@@ -17,16 +17,15 @@ The pseudo code above tells us that for each input x, how FGSM performs adversar
 1. Initialize perturbation *delta* from uniform distribution between -*epsilon* and *epsilon*.
 
 2. Add perturbation to input x then calculate the gradient of *delta*, and update the *delta* as below:
-<img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;\delta&space;&plus;&space;\alpha&space;*&space;sign(\nabla_\delta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i))" title="https://latex.codecogs.com/svg.image?\delta = \delta + \alpha * sign(\nabla_\delta l(f_\theta(x_i + \delta), y_i))" />
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;\delta&space;&plus;&space;\alpha&space;*&space;sign(\nabla_\delta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i))" title="https://latex.codecogs.com/svg.image?\delta = \delta + \alpha * sign(\nabla_\delta l(f_\theta(x_i + \delta), y_i))" /></p>
    
 
 3. If the absolute value of *delta* is too great, project it back into (-*epsilon*, *epsilon*):
-<img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;max(min(\delta,&space;\epsilon),&space;-\epsilon)" title="https://latex.codecogs.com/svg.image?\delta = max(min(\delta, \epsilon), -\epsilon)" />
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;max(min(\delta,&space;\epsilon),&space;-\epsilon)" title="https://latex.codecogs.com/svg.image?\delta = max(min(\delta, \epsilon), -\epsilon)" /></p>
    
 
 4. Update  model weights with some optimizer, e.g. SGD:
-<img src="https://latex.codecogs.com/svg.image?\theta&space;=&space;\theta&space;-&space;\nabla_\theta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i)" title="https://latex.codecogs.com/svg.image?\theta = \theta - \nabla_\theta l(f_\theta(x_i + \delta), y_i)" />
-   
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\theta&space;=&space;\theta&space;-&space;\nabla_\theta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i)" title="https://latex.codecogs.com/svg.image?\theta = \theta - \nabla_\theta l(f_\theta(x_i + \delta), y_i)" /></p>
 
 ## 2. Free
 
@@ -41,20 +40,20 @@ It can be regarded that Free adversarial repeats several FGSM attacks in one bat
 2. For each input x, Free adversary perform FGSM adversarial attack N times simultaneously.
 
 3. For every FGSM attack, It compute gradients for perturbation and model weights simultaneously:
-<img src="https://latex.codecogs.com/svg.image?\nabla_\delta,&space;\nabla_\theta&space;=&space;\nabla&space;l(f_\theta(x_i&plus;\delta),y_i)" title="https://latex.codecogs.com/svg.image?\nabla_\delta, \nabla_\theta = \nabla l(f_\theta(x_i+\delta),y_i)" />
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\nabla_\delta,&space;\nabla_\theta&space;=&space;\nabla&space;l(f_\theta(x_i&plus;\delta),y_i)" title="https://latex.codecogs.com/svg.image?\nabla_\delta, \nabla_\theta = \nabla l(f_\theta(x_i+\delta),y_i)" /></p>
 
 4. Update *delta*:
-<img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;\delta&space;&plus;&space;\epsilon&space;*&space;sign(\nabla_\delta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i))" title="https://latex.codecogs.com/svg.image?\delta = \delta + \epsilon * sign(\nabla_\delta l(f_\theta(x_i + \delta), y_i))" />
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;\delta&space;&plus;&space;\epsilon&space;*&space;sign(\nabla_\delta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i))" title="https://latex.codecogs.com/svg.image?\delta = \delta + \epsilon * sign(\nabla_\delta l(f_\theta(x_i + \delta), y_i))" /></p>
    
 
    This formula is similar to FGSM's, the only difference is the coefficient of sign function.
 
 5. The same as FGSM, project *delta* back into (-*epsilon*, *epsilon*) if its absolute value too great:
-<img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;max(min(\delta,&space;\epsilon),&space;-\epsilon)" title="https://latex.codecogs.com/svg.image?\delta = max(min(\delta, \epsilon), -\epsilon)" />
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;max(min(\delta,&space;\epsilon),&space;-\epsilon)" title="https://latex.codecogs.com/svg.image?\delta = max(min(\delta, \epsilon), -\epsilon)" /></p>
    
 
 6. Update  model weights with some optimizer, e.g. SGD:
-<img src="https://latex.codecogs.com/svg.image?\theta&space;=&space;\theta&space;-&space;\nabla_\theta" title="https://latex.codecogs.com/svg.image?\theta = \theta - \nabla_\theta" />
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\theta&space;=&space;\theta&space;-&space;\nabla_\theta" title="https://latex.codecogs.com/svg.image?\theta = \theta - \nabla_\theta" /></p>
    
 
 **Note:** Because Free adversary attack N times for each batch, epochs of training could decreased to T/N times.
@@ -70,14 +69,14 @@ The steps are as followings:
 1. For each input x, PGD initialize *delta* to zero at first.
 
 2. Loop N times to update *delta* in the way below:
-<img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;\delta&space;&plus;&space;\alpha&space;*&space;sign(\nabla_\delta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i))" title="https://latex.codecogs.com/svg.image?\delta = \delta + \alpha * sign(\nabla_\delta l(f_\theta(x_i + \delta), y_i))" />
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;\delta&space;&plus;&space;\alpha&space;*&space;sign(\nabla_\delta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i))" title="https://latex.codecogs.com/svg.image?\delta = \delta + \alpha * sign(\nabla_\delta l(f_\theta(x_i + \delta), y_i))" /></p>
 
 3. If it exceeds the scale (-*epsilon*, *epsilon*), it must be scaled again:
-<img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;max(min(\delta,&space;\epsilon),&space;-\epsilon)" title="https://latex.codecogs.com/svg.image?\delta = max(min(\delta, \epsilon), -\epsilon)" />
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\delta&space;=&space;max(min(\delta,&space;\epsilon),&space;-\epsilon)" title="https://latex.codecogs.com/svg.image?\delta = max(min(\delta, \epsilon), -\epsilon)" /></p>
    
 
 4. After accumulate *delta* N times, update model weights with some optimizer:
-<img src="https://latex.codecogs.com/svg.image?\theta&space;=&space;\theta&space;-&space;\nabla_\theta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i)" title="https://latex.codecogs.com/svg.image?\theta = \theta - \nabla_\theta l(f_\theta(x_i + \delta), y_i)" />
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\theta&space;=&space;\theta&space;-&space;\nabla_\theta&space;l(f_\theta(x_i&space;&plus;&space;\delta),&space;y_i)" title="https://latex.codecogs.com/svg.image?\theta = \theta - \nabla_\theta l(f_\theta(x_i + \delta), y_i)" /></p>
 
 To achieve the three adversarial trainings above , this repository includes two different implementations:
 
