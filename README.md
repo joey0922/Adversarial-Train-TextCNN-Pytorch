@@ -10,7 +10,7 @@ In the paper above, it presented three  different adversaries as follows:
 
 [FGSM](https://arxiv.org/abs/1412.6572), short for Fast Gradient Sign Method, is summarized below:
 
-![FGSM](C:\Users\Joey\Desktop\workspace\同花顺测试\FGSM.PNG)
+![FGSM](https://github.com/joey0922/Adversarial-Train-TextCNN-Pytorch/tree/main/PNG/FGSM.PNG)
 
 The pseudo code above tells us that for each input x, how FGSM performs adversarial attack:
 
@@ -38,7 +38,7 @@ The pseudo code above tells us that for each input x, how FGSM performs adversar
 
 The pseudo code of "Free" is as followings:
 
-![free](C:\Users\Joey\Desktop\workspace\同花顺测试\free.PNG)
+![free](https://github.com/joey0922/Adversarial-Train-TextCNN-Pytorch/tree/main/PNG/free.PNG)
 
 It can be regarded that Free adversarial repeats several FGSM attacks in one batch of x:
 
@@ -78,7 +78,7 @@ It can be regarded that Free adversarial repeats several FGSM attacks in one bat
 
 PGD adversarial training updates perturbation $\delta$ N times before update model weights:
 
-![PGD](C:\Users\Joey\Desktop\workspace\同花顺测试\PGD.PNG)
+![PGD](https://github.com/joey0922/Adversarial-Train-TextCNN-Pytorch/tree/main/PNG/PGD.PNG)
 
 The steps are as followings:
 
