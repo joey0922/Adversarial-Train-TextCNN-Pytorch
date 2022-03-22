@@ -1,2 +1,2 @@
-# Adversarial-Train-TextcCNN-Pytorch
+# Adversarial-Train-TextCNN-Pytorch
 Implements of adversarial train textCNN code
