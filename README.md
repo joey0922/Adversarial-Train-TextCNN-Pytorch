@@ -8,8 +8,20 @@ A repository that implements three adversarial training methods, FGSM, "Free" an
 
 ## 3. PGD
 
-# Data
-
+# Configuration
+## Environment
++ joblib==1.0.1
++ numpy==1.20.1
++ pandas==1.2.4
++ scikit_learn==1.0.2
++ torch==1.11.0
++ tqdm==4.59.0
+## Data
+|     | 数量 |
+|-----|-----|
+|训练集|180000|
+|验证集|10000|
+|测试集|10000|
 # Result							
 
 # Reference
