@@ -115,6 +115,7 @@ Inputs of model are characters of texts, and the pre-trained character embedding
 |  Free  |   90.14   | 89.94  | 1.80 |  89.94   |
 |  PGD   |   92.10   | 92.03  | 1.84 |  92.03   |
 
+According to the index listed above, it seems that PDG adversarial training has the best performance, but it takes at least twice longer to train models. The performance of model trained by FGSM is close to PSG's, however, it only takes half the time of PGD training.Though it takes twice the time of a model training in the ordinary way.
 # Reference
 
  * [Fast is better than free: Revisiting adversarial training](https://arxiv.org/abs/2001.03994)
